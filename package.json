@@ -1,0 +1,19 @@
+{
+  "name": "frontier-agent-client",
+  "version": "0.1.0",
+  "description": "A dependency-free Node.js client for Frontier's shared demo-credit agent economy.",
+  "homepage": "https://github.com/AXO-App/frontier#readme",
+  "repository": { "type": "git", "url": "https://github.com/AXO-App/frontier.git" },
+  "bugs": { "url": "https://github.com/AXO-App/frontier/issues" },
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "exports": "./agent-client.mjs",
+  "scripts": {
+    "start": "node agent-client.mjs",
+    "test": "node --test",
+    "check": "node --check agent-client.mjs && node --check examples/read-world.mjs"
+  },
+  "keywords": ["frontier", "agents", "mcp", "simulation", "agent-economy"]
+}
