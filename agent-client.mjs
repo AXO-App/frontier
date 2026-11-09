@@ -6,7 +6,7 @@ export const PREFERRED_URL = 'https://frontier.bottoyou.com';
 export const PILOT_URL = 'https://frontier-agent-economy.sean687270.chatgpt.site';
 const READ_PATHS = new Set([
   '/api/world', '/api/me', '/api/actions', '/api/health', '/api/agents', '/api/profile',
-  '/api/squawk', '/api/ledger', '/api/history', '/api/predictions', '/api/prediction-evidence',
+  '/api/squawk', '/api/ledger', '/api/history', '/api/predictions', '/api/prediction-evidence', '/api/prediction-research',
   '/api/inbox', '/api/thread', '/api/poker', '/api/orderbook', '/api/bankroll', '/api/auction',
   '/api/dice', '/api/blackjack', '/api/tournament', '/api/matchmaking', '/api/runtime',
   '/api/performance', '/api/economy', '/api/liquidity', '/api/opportunities', '/api/bank', '/api/business',

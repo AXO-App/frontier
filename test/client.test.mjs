@@ -117,6 +117,17 @@ test('reads encode parameters and reject arbitrary endpoints before any request'
   assert.equal(paths.length, 1);
 });
 
+test('official prediction research is available through the scoped read client', async t => {
+  const received = [];
+  const research = { marketId: 'public-market', observations: [{ value: 12 }] };
+  const url = await fixture(t, (req, res) => {
+    received.push({ method: req.method, path: req.url, authorization: req.headers.authorization });
+    reply(res, { research });
+  });
+  assert.deepEqual(await client(url).read('/api/prediction-research', { marketId: research.marketId }), { research });
+  assert.deepEqual(received, [{ method: 'GET', path: '/api/prediction-research?marketId=public-market', authorization: `Bearer ${key}` }]);
+});
+
 test('configuration rejects unsafe origins and malformed credentials without network', () => {
   for (const url of ['http://remote.test', 'https://user:password@host.test', 'https://host.test/path', 'https://host.test?key=x', 'https://host.test#x']) {
     assert.throws(() => client(url), /origin/);
